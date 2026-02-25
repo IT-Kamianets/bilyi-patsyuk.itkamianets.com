@@ -1,0 +1,440 @@
+import { SiteContent } from '../models/site-content';
+
+export const SITE_CONTENT_UK: SiteContent = {
+  "brand": {
+    "name": "Гостьовий дім «Білий Пацюк»",
+    "city": "Кам'янець-Подільський",
+    "country": "Україна",
+    "tagline": "Затишний камерний дім із лофт-акцентами, кам’яним старим містом і тихим двором.",
+    "descriptionShort": "Камерний гостьовий дім у старому місті з теплими матеріалами та тихим двориком.",
+    "descriptionFooter": "Камерний дім у старому місті з тихим двориком."
+  },
+  "contacts": {
+    "phones": [
+      {
+        "label": "Адміністратор",
+        "value": "+380 67 268 3727",
+        "hrefTel": "tel:+380672683727"
+      }
+    ],
+    "address": "Старопоштовий узвіз, 3а, Кам'янець-Подільський",
+    "checkIn": "15:00–23:30",
+    "checkOut": "до 12:00"
+  },
+  "socials": {
+    "facebookUrl": "https://www.facebook.com/p/%D0%90%D1%80%D1%82-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%96%D1%80-%D0%91%D1%96%D0%BB%D0%B8%D0%B9-%D0%9F%D0%B0%D1%86%D1%8E%D0%BA-61551624810462/",
+    "bookingUrl": "https://www.booking.com/hotel/ua/gost-ovii-dim-bilii-patsiuk.uk.html",
+    "tripadvisorUrl": "https://www.tripadvisor.com/Hotel_Review-g659293-d33265237-Reviews-Guest_House_White_Rat-Kamianets_Podilskyi_Khmelnytskyi_Oblast.html"
+  },
+  "ui": {
+    "nav": {
+      "home": "Головна",
+      "rooms": "Номери",
+      "amenities": "Зручності",
+      "gallery": "Галерея",
+      "location": "Розташування",
+      "reviews": "Відгуки",
+      "contacts": "Контакти",
+      "more": "Ще"
+    },
+    "actions": {
+      "book": "Забронювати на Booking",
+      "message": "Написати",
+      "viewMore": "Показати більше",
+      "collapse": "Згорнути",
+      "close": "Закрити",
+      "call": "Подзвонити",
+      "openMap": "Відкрити на мапі"
+    },
+    "hero": {
+      "cardTitle": "В історичному серці міста",
+      "contactHost": "Зв’язатися з господарем",
+      "checkInLabel": "Заїзд",
+      "checkOutLabel": "Виїзд"
+    },
+    "rooms": {
+      "title": "Номери",
+      "details": "Детальніше",
+      "cta": "Переглянути всі номери / Запитати наявність",
+      "sizeLabel": "Площа",
+      "viewLabel": "Вид",
+      "amenitiesLabel": "Зручності",
+      "askAvailability": "Запитати наявність",
+      "prev": "Попереднє",
+      "next": "Наступне"
+    },
+    "amenities": {
+      "title": "Зручності",
+      "highlightLabel": "Популярне"
+    },
+    "gallery": {
+      "title": "Галерея",
+      "lead": "Світлини гостьового дому та старого міста поруч.",
+      "modalTitleFallback": "Фото",
+      "prev": "Попереднє фото",
+      "next": "Наступне фото"
+    },
+    "location": {
+      "title": "Розташування",
+      "lead": "Старе місто, каньйон і спокійні вечори поруч.",
+      "mapTitle": "Мапа Кам'янця-Подільського",
+      "mapFallback": "Карта буде доступна незабаром. Зверніться до адміністратора за маршрутами.",
+      "coordsLabel": "Координати",
+      "walkingText": "Старе місто та каньйонні стежки за кілька хвилин пішки",
+      "quietText": "Тихий район після 22:00"
+    },
+    "reviews": {
+      "title": "Відгуки",
+      "lead": "Реальні оцінки з офіційних майданчиків.",
+      "countSuffix": "відгуків",
+      "viewOn": "Переглянути на"
+    },
+    "contacts": {
+      "title": "Контакти",
+      "phoneLabel": "Телефон",
+      "emailLabel": "Електронна пошта",
+      "checkInLabel": "Заїзд",
+      "checkOutLabel": "Виїзд",
+      "quickTitle": "Швидкі дії",
+      "quickText": "Пишіть або телефонуйте, щоб уточнити наявність номерів і деталі заїзду.",
+      "officialLinks": "Офіційні сторінки"
+    },
+    "footer": {
+      "aboutTitle": "Про дім",
+      "aboutText": "Камерний гостьовий дім з лофт-акцентами, теплими матеріалами та тихим двором для вечірнього відпочинку.",
+      "navTitle": "Навігація",
+      "contactsTitle": "Контакти",
+      "rights": "Всі права захищені."
+    },
+    "mobile": {
+      "moreTitle": "Ще",
+      "languageLabel": "Мова"
+    },
+    "language": {
+      "ua": "UA",
+      "en": "EN",
+      "label": "Мова"
+    }
+  },
+  "heroHighlights": [
+    "Безкоштовний Wi-Fi",
+    "Безкоштовне приватне паркування",
+    "Тераса і двір",
+    "Тиха каньйонна локація",
+    "Лофт і затишок"
+  ],
+  "highlights": [
+    {
+      "icon": "moon-stars",
+      "title": "Тихі вечори",
+      "text": "Спокійний двір і м’яке світло після того, як старе місто стихає."
+    },
+    {
+      "icon": "bricks",
+      "title": "Камінь і ремесло",
+      "text": "Історична фактура в поєднанні з теплим деревом і ручними деталями."
+    },
+    {
+      "icon": "cup-hot",
+      "title": "Турботливий прийом",
+      "text": "Персональний підхід, поради по місту та увага до комфорту."
+    },
+    {
+      "icon": "window",
+      "title": "Каньйон поруч",
+      "text": "Кілька кроків до старого міста, мурів і каньйонних краєвидів."
+    }
+  ],
+  "sectionsIntro": {
+    "rooms": "Невелика добірка номерів для спокійного сну й неквапних вечорів.",
+    "amenities": "Щоденні зручності з камерною, ремісничою атмосферою.",
+    "contacts": "Зв’яжіться з адміністратором для бронювання та спеціальних запитів."
+  },
+  "rooms": [
+    {
+      "id": "garden-double",
+      "name": "Двомісний номер із видом на сад",
+      "sizeM2": 23,
+      "shortDescription": "Тихий номер із видом на зелений двір та м’яким освітленням.",
+      "features": [
+        "Приватна ванна кімната",
+        "Чайник",
+        "Тераса або балкон",
+        "Рушники та білизна",
+        "Опалення",
+        "Безкоштовний Wi-Fi"
+      ],
+      "viewOptions": [
+        "вид на сад",
+        "вид на двір"
+      ],
+      "images": [
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815891279.jpg?a=303412&k=516403fc2fd0c9fb16e4d98fcd798dc7a4b551408df6398f29e5f14ea875ea59&o=",
+          "alt": "Двомісний номер із видом на сад",
+          "caption": "Світлий двомісний номер із видом на сад."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890386.jpg?a=303412&k=3fadc36bba4989dbcd614197e1726c692fa75bd9011165c2e45ac0ac9d0f8bc9&o=",
+          "alt": "Інтер’єр двомісного номера",
+          "caption": "Лофт-деталі та тепле світло."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815889528.jpg?a=303412&k=6148a3ae604eb7062503dbd0167e585b711931f4f36fac454769d76c2e1e2528&o=",
+          "alt": "Ванна кімната номера",
+          "caption": "Охайна ванна кімната з душем."
+        }
+      ]
+    },
+    {
+      "id": "double",
+      "name": "Двомісний номер",
+      "sizeM2": 24,
+      "shortDescription": "Світлий номер з лофт-акцентами та зручним робочим куточком.",
+      "features": [
+        "Приватна ванна кімната",
+        "Чайник",
+        "ТБ з плоским екраном",
+        "Рушники та білизна",
+        "Опалення",
+        "Безкоштовний Wi-Fi"
+      ],
+      "viewOptions": [
+        "вид на місто",
+        "вид на двір"
+      ],
+      "images": [
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890501.jpg?a=303412&k=e37dee52afecd5e1774b14e2699112da40d6fb12fd7b1b170bead4922bef3e02&o=",
+          "alt": "Двомісний номер",
+          "caption": "Номер із сучасним лофт-настроєм."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890886.jpg?a=303412&k=77e42eb6c4fba44d065cd322ee6b86af48af798e45309a4b183969738a495113&o=",
+          "alt": "Деталі інтер’єру номера",
+          "caption": "Деталі інтер’єру та затишні акценти."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815889283.jpg?a=303412&k=40c9069f73ab80641a0b6f382ff9465ef589cbd52626ab7a07966531fe880bd7&o=",
+          "alt": "Душова зона",
+          "caption": "Сучасна душова зона."
+        }
+      ]
+    },
+    {
+      "id": "garden-studio",
+      "name": "Номер-студіо з видом на сад",
+      "sizeM2": 24,
+      "shortDescription": "Студія з компактною кухонною зоною та видом на сад.",
+      "features": [
+        "Кухонний куточок",
+        "Мікрохвильова піч",
+        "Приватна ванна кімната",
+        "Чайник",
+        "Рушники та білизна",
+        "Безкоштовний Wi-Fi"
+      ],
+      "viewOptions": [
+        "вид на сад",
+        "вид на двір"
+      ],
+      "images": [
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815891279.jpg?a=303412&k=516403fc2fd0c9fb16e4d98fcd798dc7a4b551408df6398f29e5f14ea875ea59&o=",
+          "alt": "Номер-студіо з видом на сад",
+          "caption": "Студія з м’яким світлом і видом на сад."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890501.jpg?a=303412&k=e37dee52afecd5e1774b14e2699112da40d6fb12fd7b1b170bead4922bef3e02&o=",
+          "alt": "Інтер’єр студії",
+          "caption": "Зона відпочинку зі стриманими лофт-акцентами."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815889528.jpg?a=303412&k=6148a3ae604eb7062503dbd0167e585b711931f4f36fac454769d76c2e1e2528&o=",
+          "alt": "Ванна кімната студії",
+          "caption": "Ванна кімната з усім необхідним."
+        }
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Номер-студіо",
+      "sizeM2": 24,
+      "shortDescription": "Затишна студія для довших зупинок і повільних ранків.",
+      "features": [
+        "Кухонний куточок",
+        "Мікрохвильова піч",
+        "Приватна ванна кімната",
+        "Чайник",
+        "ТБ з плоским екраном",
+        "Безкоштовний Wi-Fi"
+      ],
+      "viewOptions": [
+        "вид на місто",
+        "вид на двір"
+      ],
+      "images": [
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890386.jpg?a=303412&k=3fadc36bba4989dbcd614197e1726c692fa75bd9011165c2e45ac0ac9d0f8bc9&o=",
+          "alt": "Номер-студіо",
+          "caption": "Затишний простір студії для неквапних ранків."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890886.jpg?a=303412&k=77e42eb6c4fba44d065cd322ee6b86af48af798e45309a4b183969738a495113&o=",
+          "alt": "Деталі інтер’єру студії",
+          "caption": "Деталі інтер’єру з теплими матеріалами."
+        },
+        {
+          "src": "https://q-xx.bstatic.com/xdata/images/hotel/400x320/813739388.jpg?a=303412&k=44c09f2c58b5af2cec9104e5fa6eb4daf0afcb3895a1e50881927f559997a701&o=",
+          "alt": "Краєвид поруч",
+          "caption": "Краєвид старого міста поруч."
+        }
+      ]
+    }
+  ],
+  "amenities": [
+    {
+      "id": "wifi",
+      "label": "Безкоштовний Wi-Fi",
+      "icon": "wifi",
+      "highlight": true
+    },
+    {
+      "id": "parking",
+      "label": "Безкоштовне приватне паркування",
+      "icon": "car-front",
+      "highlight": true
+    },
+    {
+      "id": "terrace",
+      "label": "Тераса",
+      "icon": "sun",
+      "highlight": true
+    },
+    {
+      "id": "garden",
+      "label": "Сад",
+      "icon": "tree",
+      "highlight": false
+    },
+    {
+      "id": "picnic",
+      "label": "Зона для пікніка",
+      "icon": "basket",
+      "highlight": false
+    },
+    {
+      "id": "nonsmoking",
+      "label": "Номери для некурців",
+      "icon": "ban",
+      "highlight": false
+    },
+    {
+      "id": "family",
+      "label": "Сімейні номери",
+      "icon": "people",
+      "highlight": false
+    },
+    {
+      "id": "private-checkin",
+      "label": "Приватний заїзд/виїзд",
+      "icon": "key",
+      "highlight": false
+    }
+  ],
+  "reviews": [
+    {
+      "source": "Booking.com",
+      "rating": 9.9,
+      "count": 253,
+      "quote": "Оцінка 9,9/10 на основі 253 відгуків.",
+      "link": "https://www.booking.com/hotel/ua/gost-ovii-dim-bilii-patsiuk.uk.html"
+    },
+    {
+      "source": "Tripadvisor",
+      "quote": "Переглянути відгуки на Tripadvisor.",
+      "link": "https://www.tripadvisor.com/Hotel_Review-g659293-d33265237-Reviews-Guest_House_White_Rat-Kamianets_Podilskyi_Khmelnytskyi_Oblast.html"
+    }
+  ],
+  "location": {
+    "coords": {
+      "lat": 48.68002,
+      "lon": 26.57239
+    },
+    "mapEmbedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=26.56739%2C48.67702%2C26.57739%2C48.68302&layer=mapnik&marker=48.68002%2C26.57239",
+    "mapLink": "https://maps.google.com/?q=48.68002,26.57239",
+    "notes": "До будинку ведуть сходи та підйом; у темну пору доби частина вулиць може бути слабко освітлена.",
+    "nearby": "Поруч із Нижніми Польськими брамами та кам’яними вулицями старого міста."
+  },
+  "media": {
+    "heroImage": {
+      "src": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/813738880.jpg?a=303412&k=32e86da8d393da995accc0131d699049da1f875b8da18711dc8d4a9099a4ebb4&o=",
+      "alt": "Екстер’єр гостьового дому"
+    },
+    "galleryImages": [
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/813738880.jpg?a=303412&k=32e86da8d393da995accc0131d699049da1f875b8da18711dc8d4a9099a4ebb4&o=",
+        "alt": "Екстер’єр гостьового дому",
+        "caption": "Фасад гостьового дому в історичній частині міста.",
+        "category": "Екстер’єр"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815891279.jpg?a=303412&k=516403fc2fd0c9fb16e4d98fcd798dc7a4b551408df6398f29e5f14ea875ea59&o=",
+        "alt": "Інтер’єр номера",
+        "caption": "Світлий інтер’єр одного з номерів.",
+        "category": "Номери"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890386.jpg?a=303412&k=3fadc36bba4989dbcd614197e1726c692fa75bd9011165c2e45ac0ac9d0f8bc9&o=",
+        "alt": "Інтер’єр номера",
+        "caption": "Лофт-деталі та комфортний простір.",
+        "category": "Номери"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890501.jpg?a=303412&k=e37dee52afecd5e1774b14e2699112da40d6fb12fd7b1b170bead4922bef3e02&o=",
+        "alt": "Інтер’єр номера",
+        "caption": "Спальне місце та зона відпочинку.",
+        "category": "Номери"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890886.jpg?a=303412&k=77e42eb6c4fba44d065cd322ee6b86af48af798e45309a4b183969738a495113&o=",
+        "alt": "Деталі інтер’єру",
+        "caption": "Теплі матеріали й затишні акценти.",
+        "category": "Деталі"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/400x320/567596033.jpg?a=303412&k=883d8ce20e2dee4e63dcc6246067b2907bec3b1a6e622413ecb8c577f2403a82&o=",
+        "alt": "Двір і тераса",
+        "caption": "Приватний двір для вечірніх розмов.",
+        "category": "Двір"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/400x320/567596028.jpg?a=303412&k=cc797c287dcf96bc18d6a956e67302a4e66932d3a4f95a865e513f75dbfb35b9&o=",
+        "alt": "Двір і тераса",
+        "caption": "Тераса у внутрішньому дворику.",
+        "category": "Двір"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815889528.jpg?a=303412&k=6148a3ae604eb7062503dbd0167e585b711931f4f36fac454769d76c2e1e2528&o=",
+        "alt": "Ванна кімната",
+        "caption": "Охайна ванна кімната з душем.",
+        "category": "Ванна"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815889283.jpg?a=303412&k=40c9069f73ab80641a0b6f382ff9465ef589cbd52626ab7a07966531fe880bd7&o=",
+        "alt": "Душова зона",
+        "caption": "Сучасна душова кабіна.",
+        "category": "Ванна"
+      },
+      {
+        "src": "https://q-xx.bstatic.com/xdata/images/hotel/400x320/813739388.jpg?a=303412&k=44c09f2c58b5af2cec9104e5fa6eb4daf0afcb3895a1e50881927f559997a701&o=",
+        "alt": "Краєвид поруч",
+        "caption": "Каньйон та історичні краєвиди поруч.",
+        "category": "Краєвид"
+      }
+    ]
+  },
+  "links": {
+    "githubRepoUrl": "https://github.com/IT-Kamianets/bilyi-patsyuk.itkamianets.com"
+  }
+};
