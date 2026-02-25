@@ -1,0 +1,25 @@
+<section id="amenities" class="section-block section-muted">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title">Amenities</h2>
+      <ng-container *ngIf="content$ | async as content">
+        <p class="section-lead">{{ content.sectionsIntro?.amenities }}</p>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-3">
+        <div class="col-6 col-lg-4" *ngFor="let amenity of content.amenities; trackBy: trackById">
+          <div class="amenity-item" [class.is-highlight]="amenity.highlight">
+            <div class="amenity-icon">
+              <i [class]="'bi bi-' + amenity.icon" aria-hidden="true"></i>
+            </div>
+            <div class="amenity-body">
+              <div class="amenity-label">{{ amenity.label }}</div>
+              <div class="amenity-note" *ngIf="amenity.highlight">Guest favorite</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

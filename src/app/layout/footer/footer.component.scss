@@ -1,0 +1,29 @@
+.site-footer {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(47, 50, 55, 0.1);
+  background: rgba(246, 240, 231, 0.9);
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: var(--color-slate);
+}
+
+.footer-github {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 50, 55, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-graphite);
+  background: #fff;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-github:hover {
+  color: var(--color-accent);
+  border-color: rgba(122, 47, 59, 0.5);
+  transform: translateY(-2px);
+}

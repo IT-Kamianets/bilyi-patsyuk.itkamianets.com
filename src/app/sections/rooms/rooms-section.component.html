@@ -1,0 +1,95 @@
+<section id="rooms" class="section-block">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title">Rooms</h2>
+      <ng-container *ngIf="content$ | async as content">
+        <p class="section-lead">{{ content.sectionsIntro?.rooms }}</p>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" *ngFor="let room of content.rooms | slice:0:3; trackBy: trackById">
+          <article class="card room-card h-100">
+            <div class="card-body d-flex flex-column">
+              <div class="room-meta">
+                <span class="room-size">{{ room.sizeM2 }} m2</span>
+                <span class="room-view">{{ room.viewOptions[0] }}</span>
+              </div>
+              <h3 class="h5">{{ room.name }}</h3>
+              <p class="text-muted flex-grow-1">{{ room.shortDescription }}</p>
+              <div class="room-features">
+                <span class="feature-pill" *ngFor="let feature of room.features | slice:0:4">
+                  {{ feature }}
+                </span>
+              </div>
+              <div class="room-actions mt-3">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  [attr.data-bs-target]="'#roomModal-' + room.id"
+                >
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="rooms-cta">
+        <a class="btn btn-primary" [routerLink]="['/']" fragment="contacts">
+          See all rooms / Ask availability
+        </a>
+      </div>
+
+      <div
+        class="modal fade"
+        *ngFor="let room of content.rooms; trackBy: trackById"
+        [id]="'roomModal-' + room.id"
+        tabindex="-1"
+        [attr.aria-labelledby]="'roomModalLabel-' + room.id"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" [id]="'roomModalLabel-' + room.id">{{ room.name }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-muted">{{ room.shortDescription }}</p>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="modal-meta">
+                    <span>Size</span>
+                    <strong>{{ room.sizeM2 }} m2</strong>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="modal-meta">
+                    <span>View</span>
+                    <strong>{{ room.viewOptions.join(', ') }}</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-features">
+                <h6>Features</h6>
+                <ul class="list-unstyled">
+                  <li *ngFor="let feature of room.features">
+                    <i class="bi bi-check2" aria-hidden="true"></i>
+                    {{ feature }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="btn btn-primary" [routerLink]="['/']" fragment="contacts">Ask availability</a>
+              <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

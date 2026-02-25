@@ -1,0 +1,75 @@
+.room-card {
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+.room-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  margin-bottom: 0.75rem;
+}
+
+.room-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.feature-pill {
+  background: rgba(122, 47, 59, 0.08);
+  color: var(--color-accent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.room-actions .btn {
+  border-radius: 999px;
+}
+
+.rooms-cta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.rooms-cta .btn {
+  border-radius: 999px;
+  padding: 0.75rem 1.8rem;
+}
+
+.modal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--color-slate);
+}
+
+.modal-meta strong {
+  color: var(--color-ink);
+}
+
+.modal-features {
+  margin-top: 1.5rem;
+}
+
+.modal-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.modal-features i {
+  color: var(--color-accent);
+}

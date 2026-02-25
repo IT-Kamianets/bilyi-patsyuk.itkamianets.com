@@ -1,0 +1,17 @@
+<section class="section-block highlights-strip">
+  <div class="container">
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-3 g-lg-4">
+        <div class="col-12 col-md-6 col-lg-3" *ngFor="let item of content.highlights; trackBy: trackByTitle">
+          <article class="highlight-card">
+            <div class="highlight-icon">
+              <i [class]="'bi bi-' + item.icon" aria-hidden="true"></i>
+            </div>
+            <h3 class="h5">{{ item.title }}</h3>
+            <p class="text-muted mb-0">{{ item.text }}</p>
+          </article>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

@@ -1,0 +1,117 @@
+:root {
+  --color-sand: #f6f0e7;
+  --color-ink: #2c2a26;
+  --color-accent: #7a2f3b;
+  --color-amber: #c78c4b;
+  --color-slate: #5b5f66;
+  --color-graphite: #3b3f44;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
+  --radius-md: 16px;
+  --shadow-soft: 0 12px 30px rgba(33, 26, 20, 0.08);
+  --shadow-strong: 0 20px 45px rgba(33, 26, 20, 0.16);
+  --header-offset: 96px;
+  --bs-body-bg: var(--color-sand);
+  --bs-body-color: var(--color-ink);
+  --bs-primary: var(--color-accent);
+  --bs-primary-rgb: 122, 47, 59;
+  --bs-secondary: var(--color-slate);
+  --bs-font-sans-serif: var(--font-body);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  line-height: 1.6;
+  background-color: var(--color-sand);
+  background-image:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 45%),
+    radial-gradient(circle at 20% 0%, rgba(230, 214, 190, 0.6), transparent 50%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-ink);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #64232f;
+}
+
+.section-block {
+  padding: 4.5rem 0;
+}
+
+section[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+.section-muted {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  margin-bottom: 0.6rem;
+}
+
+.section-lead {
+  max-width: 640px;
+  color: var(--color-slate);
+}
+
+.text-muted {
+  color: var(--color-slate) !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--color-accent);
+  --bs-btn-border-color: var(--color-accent);
+  --bs-btn-hover-bg: #64232f;
+  --bs-btn-hover-border-color: #64232f;
+  --bs-btn-active-bg: #571f28;
+  --bs-btn-active-border-color: #571f28;
+  --bs-btn-color: #fff;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--color-accent);
+  --bs-btn-border-color: var(--color-accent);
+  --bs-btn-hover-bg: var(--color-accent);
+  --bs-btn-hover-border-color: var(--color-accent);
+  --bs-btn-hover-color: #fff;
+}
+
+@media (max-width: 991.98px) {
+  :root {
+    --header-offset: 84px;
+  }
+
+  .section-block {
+    padding: 3.5rem 0;
+  }
+}

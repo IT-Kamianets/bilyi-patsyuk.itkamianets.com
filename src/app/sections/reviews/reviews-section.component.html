@@ -1,0 +1,22 @@
+<section id="reviews" class="section-block">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title">Reviews</h2>
+      <p class="section-lead">Guests share the calm, craft, and comfort they feel here.</p>
+    </div>
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" *ngFor="let review of content.reviews; trackBy: trackBySource">
+          <article class="review-card h-100">
+            <div class="review-top">
+              <span class="review-source">{{ review.source }}</span>
+              <span class="review-rating">{{ review.rating }}</span>
+            </div>
+            <p class="review-quote">"{{ review.quote }}"</p>
+            <div class="review-author" *ngIf="review.author">{{ review.author }}</div>
+          </article>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

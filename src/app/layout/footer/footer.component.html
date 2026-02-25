@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+    <ng-container *ngIf="content$ | async as content">
+      <div class="footer-copy">
+        © {{ currentYear }} {{ content.brand.name_en }}. All rights reserved.
+      </div>
+      <!-- TODO: Replace with the actual repository URL. -->
+      <a
+        class="footer-github"
+        [href]="content.links.githubRepoUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub repository"
+      >
+        <i class="bi bi-github" aria-hidden="true"></i>
+      </a>
+    </ng-container>
+  </div>
+</footer>

@@ -1,0 +1,20 @@
+<section id="gallery" class="section-block">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title">Gallery</h2>
+      <ng-container *ngIf="content$ | async as content">
+        <p class="section-lead">Moments at {{ content.brand.name_en }}.</p>
+      </ng-container>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of galleryItems; trackBy: trackByTitle">
+        <div class="gallery-tile">
+          <div class="gallery-overlay">
+            <h3 class="h5">{{ item.title }}</h3>
+            <p class="text-muted mb-0">{{ item.caption }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
