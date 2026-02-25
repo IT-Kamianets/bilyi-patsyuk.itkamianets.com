@@ -29,7 +29,7 @@ export class HeroSectionComponent {
   );
 
   protected readonly heroBackground$ = this.contentService.content$.pipe(
-    map((content) => this.buildHeroBackground(content.heroImageUrl))
+    map((content) => this.buildHeroBackground(content.media?.heroImage?.src ?? content.heroImageUrl))
   );
 
   protected readonly trackByHighlight = (_: number, item: string) => item;

@@ -33,7 +33,25 @@
   margin: 0;
 }
 
+.review-meta {
+  font-size: 0.85rem;
+  color: var(--color-slate);
+}
+
 .review-author {
   font-weight: 600;
   color: var(--color-graphite);
+}
+
+.review-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.review-link:hover {
+  color: var(--color-ink);
 }

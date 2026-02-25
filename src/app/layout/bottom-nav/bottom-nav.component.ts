@@ -6,8 +6,9 @@ import { ContentService } from '../../services/content.service';
 import { LanguageCode, LanguageService } from '../../services/language.service';
 
 interface NavLink {
-  key: 'rooms' | 'amenities' | 'gallery' | 'location' | 'reviews' | 'contacts';
+  key: 'home' | 'rooms' | 'gallery' | 'location' | 'contacts';
   fragment: string;
+  icon: string;
 }
 
 interface SocialLink {
@@ -18,25 +19,27 @@ interface SocialLink {
 }
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-bottom-nav',
   imports: [CommonModule, RouterLink],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  templateUrl: './bottom-nav.component.html',
+  styleUrl: './bottom-nav.component.scss'
 })
-export class HeaderComponent implements AfterViewInit, OnDestroy {
+export class BottomNavComponent implements AfterViewInit, OnDestroy {
   private readonly contentService = inject(ContentService);
   private readonly languageService = inject(LanguageService);
   private readonly cdr = inject(ChangeDetectorRef);
   private observer?: IntersectionObserver;
 
   protected readonly navLinks: NavLink[] = [
-    { key: 'rooms', fragment: 'rooms' },
-    { key: 'amenities', fragment: 'amenities' },
-    { key: 'gallery', fragment: 'gallery' },
-    { key: 'location', fragment: 'location' },
-    { key: 'reviews', fragment: 'reviews' },
-    { key: 'contacts', fragment: 'contacts' }
+    { key: 'home', fragment: 'top', icon: 'bi-house' },
+    { key: 'rooms', fragment: 'rooms', icon: 'bi-door-open' },
+    { key: 'gallery', fragment: 'gallery', icon: 'bi-images' },
+    { key: 'location', fragment: 'location', icon: 'bi-geo-alt' },
+    { key: 'contacts', fragment: 'contacts', icon: 'bi-telephone' }
   ];
+
+  protected readonly content$ = this.contentService.content$;
+  protected readonly lang$ = this.languageService.lang$;
 
   protected readonly socialLinks$ = this.contentService.content$.pipe(
     map((content) => {
@@ -65,9 +68,6 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       return items;
     })
   );
-
-  protected readonly content$ = this.contentService.content$;
-  protected readonly lang$ = this.languageService.lang$;
 
   protected activeSection: string | null = null;
 
@@ -114,6 +114,8 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     if (initial) {
       this.activeSection = initial;
       this.cdr.markForCheck();
+    } else {
+      this.activeSection = 'top';
     }
   }
 

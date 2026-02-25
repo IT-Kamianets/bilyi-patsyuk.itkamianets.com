@@ -1,8 +1,8 @@
-<section id="amenities" class="section-block section-muted">
+﻿<section id="amenities" class="section-block section-muted">
   <div class="container">
     <div class="section-heading">
-      <h2 class="section-title">Amenities</h2>
       <ng-container *ngIf="content$ | async as content">
+        <h2 class="section-title">{{ content.ui.amenities.title }}</h2>
         <p class="section-lead">{{ content.sectionsIntro?.amenities }}</p>
       </ng-container>
     </div>
@@ -15,7 +15,7 @@
             </div>
             <div class="amenity-body">
               <div class="amenity-label">{{ amenity.label }}</div>
-              <div class="amenity-note" *ngIf="amenity.highlight">Guest favorite</div>
+              <div class="amenity-note" *ngIf="amenity.highlight">{{ content.ui.amenities.highlightLabel }}</div>
             </div>
           </div>
         </div>

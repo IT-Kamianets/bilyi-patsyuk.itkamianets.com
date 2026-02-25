@@ -14,10 +14,21 @@
 
 .navbar-brand {
   display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
+  align-items: center;
+  gap: 0.65rem;
   font-family: var(--font-heading);
   color: var(--color-ink);
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
 .brand-title {
@@ -92,7 +103,42 @@
   box-shadow: 0 0 0 0.2rem rgba(122, 47, 59, 0.2);
 }
 
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 50, 55, 0.18);
+  background: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-graphite);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  color: var(--color-accent);
+}
+
+.lang-divider {
+  color: rgba(47, 50, 55, 0.35);
+}
+
 @media (max-width: 991.98px) {
+  :host {
+    display: none;
+  }
+
   .navbar-socials {
     border-right: none;
     padding-right: 0;

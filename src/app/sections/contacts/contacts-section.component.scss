@@ -57,3 +57,20 @@
 .action-buttons .btn {
   border-radius: 999px;
 }
+
+.external-links {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.external-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.external-actions .btn {
+  border-radius: 999px;
+  font-weight: 600;
+}

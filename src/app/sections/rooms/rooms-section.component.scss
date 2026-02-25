@@ -73,3 +73,115 @@
 .modal-features i {
   color: var(--color-accent);
 }
+
+.room-modal-gallery {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.room-modal-image {
+  height: 320px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(18, 14, 12, 0.55);
+  color: #fff;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.modal-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.room-modal .modal-content {
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.room-modal .modal-body {
+  padding: 1rem 1.5rem;
+  flex: 1;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.room-modal-body {
+  display: flex;
+  gap: 1.5rem;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.room-modal-media,
+.room-modal-info {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.room-modal-info {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.25rem;
+  min-width: 0;
+}
+
+.room-modal .modal-footer {
+  border-top: 1px solid rgba(47, 50, 55, 0.1);
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+}
+
+.room-modal-info .modal-meta,
+.room-modal-info strong,
+.room-modal-info .modal-features,
+.room-modal-info .modal-features li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.carousel-caption {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 575.98px) {
+  .room-modal .modal-content {
+    max-height: 90vh;
+  }
+
+  .room-modal .modal-body {
+    padding: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .room-modal-body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .room-modal-info {
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .room-modal-image {
+    height: 220px;
+  }
+}

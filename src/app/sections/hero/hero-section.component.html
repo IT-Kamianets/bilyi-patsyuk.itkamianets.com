@@ -1,14 +1,16 @@
-<section id="top" class="hero-section">
+﻿<section id="top" class="hero-section">
   <div class="hero-media" [style.background-image]="heroBackground$ | async"></div>
-  <div class="hero-overlay"></div>
   <div class="container hero-content">
     <ng-container *ngIf="content$ | async as content">
       <div class="row align-items-center g-4">
         <div class="col-lg-7">
-          <p class="hero-eyebrow">{{ content.brand.city }} � {{ content.brand.country }}</p>
-          <h1 class="hero-title">{{ content.brand.name_en }}</h1>
+          <p class="hero-eyebrow">{{ content.brand.city }} · {{ content.brand.country }}</p>
+          <h1 class="hero-title">{{ content.brand.name }}</h1>
           <p class="hero-subtitle">
-            {{ content.brand.tagline_en }}
+            {{ content.brand.tagline }}
+          </p>
+          <p class="hero-description" *ngIf="content.brand.descriptionShort">
+            {{ content.brand.descriptionShort }}
           </p>
           <div class="hero-actions">
             <a
@@ -17,18 +19,18 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book on Booking
+              {{ content.ui.actions.book }}
             </a>
             <ng-container *ngIf="messageLink$ | async as message">
               <a
                 *ngIf="message"
-                class="btn btn-outline-primary"
+                class="btn btn-hero-secondary"
                 [href]="message.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                [attr.aria-label]="'Message us on ' + message.label"
+                [attr.aria-label]="content.ui.actions.message + ' ' + message.label"
               >
-                Message us
+                {{ content.ui.actions.message }}
               </a>
             </ng-container>
           </div>
@@ -46,22 +48,22 @@
         <div class="col-lg-5">
           <div class="hero-card">
             <div class="hero-card__content">
-              <h2 class="h4">Stay in the historic heart</h2>
+              <h2 class="h4">{{ content.ui.hero.cardTitle }}</h2>
               <p class="text-muted">
                 {{ content.contacts.address }}
               </p>
               <div class="meta-list">
                 <div>
-                  <span class="meta-label">Check-in</span>
+                  <span class="meta-label">{{ content.ui.hero.checkInLabel }}</span>
                   <span class="meta-value">{{ content.contacts.checkIn || '14:00' }}</span>
                 </div>
                 <div>
-                  <span class="meta-label">Check-out</span>
+                  <span class="meta-label">{{ content.ui.hero.checkOutLabel }}</span>
                   <span class="meta-value">{{ content.contacts.checkOut || '11:00' }}</span>
                 </div>
               </div>
               <a class="link-with-icon" [routerLink]="['/']" fragment="contacts">
-                Contact the host
+                {{ content.ui.hero.contactHost }}
                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
               </a>
             </div>

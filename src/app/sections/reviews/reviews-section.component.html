@@ -1,19 +1,36 @@
-<section id="reviews" class="section-block">
+﻿<section id="reviews" class="section-block">
   <div class="container">
-    <div class="section-heading">
-      <h2 class="section-title">Reviews</h2>
-      <p class="section-lead">Guests share the calm, craft, and comfort they feel here.</p>
-    </div>
     <ng-container *ngIf="content$ | async as content">
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4" *ngFor="let review of content.reviews; trackBy: trackBySource">
+      <div class="section-heading">
+        <h2 class="section-title">{{ content.ui.reviews.title }}</h2>
+        <p class="section-lead">{{ content.ui.reviews.lead }}</p>
+      </div>
+      <div class="row g-4" [class.justify-content-center]="centerReviews(content.reviews.length)">
+        <div
+          [class]="reviewColClass(content.reviews.length)"
+          *ngFor="let review of content.reviews; trackBy: trackBySource"
+        >
           <article class="review-card h-100">
             <div class="review-top">
               <span class="review-source">{{ review.source }}</span>
-              <span class="review-rating">{{ review.rating }}</span>
+              <span class="review-rating" *ngIf="review.rating">{{ review.rating }}</span>
             </div>
-            <p class="review-quote">"{{ review.quote }}"</p>
+            <div class="review-meta" *ngIf="review.count">
+              {{ review.count }} {{ content.ui.reviews.countSuffix }}
+            </div>
+            <p class="review-quote" *ngIf="review.quote">"{{ review.quote }}"</p>
             <div class="review-author" *ngIf="review.author">{{ review.author }}</div>
+            <a
+              *ngIf="review.link"
+              class="review-link"
+              [href]="review.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="content.ui.reviews.viewOn + ' ' + review.source"
+            >
+              {{ content.ui.reviews.viewOn }} {{ review.source }}
+              <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+            </a>
           </article>
         </div>
       </div>
