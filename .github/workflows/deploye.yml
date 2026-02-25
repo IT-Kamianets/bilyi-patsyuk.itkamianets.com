@@ -28,7 +28,7 @@ jobs:
               run: npm run build
 
             - name: Copy CNAME file
-              run: cp CNAME dist/theme-bootstrap/browser/
+              run: cp CNAME dist/bilyi-patsyuk-site/browser
 
             - name: Set up SSH
               env:
@@ -45,7 +45,7 @@ jobs:
               run: |
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                  cd dist/theme-bootstrap/browser
+                  cd dist/bilyi-patsyuk-site/browser
                   git init  # Initialize a new git repository
                   git add --all .  # Add all changes
                   git commit -m "Deploy to GitHub Pages"
