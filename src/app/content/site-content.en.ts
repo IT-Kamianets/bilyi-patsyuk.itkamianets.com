@@ -1,4 +1,4 @@
-import { SiteContent } from '../models/site-content';
+﻿import { SiteContent } from '../models/site-content';
 
 export const SITE_CONTENT_EN: SiteContent = {
   "brand": {
@@ -110,11 +110,7 @@ export const SITE_CONTENT_EN: SiteContent = {
       "moreTitle": "More",
       "languageLabel": "Language"
     },
-    "language": {
-      "ua": "UA",
-      "en": "EN",
-      "label": "Language"
-    }
+    "language": {"ua": "UA", "en": "EN", "label": "Language"}
   },
   "heroHighlights": [
     "Free Wi-Fi",
@@ -164,10 +160,7 @@ export const SITE_CONTENT_EN: SiteContent = {
         "Heating",
         "Free Wi-Fi"
       ],
-      "viewOptions": [
-        "garden view",
-        "courtyard view"
-      ],
+      "viewOptions": ["garden view", "courtyard view"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815891279.jpg?a=303412&k=516403fc2fd0c9fb16e4d98fcd798dc7a4b551408df6398f29e5f14ea875ea59&o=",
@@ -199,10 +192,7 @@ export const SITE_CONTENT_EN: SiteContent = {
         "Heating",
         "Free Wi-Fi"
       ],
-      "viewOptions": [
-        "city view",
-        "courtyard view"
-      ],
+      "viewOptions": ["city view", "courtyard view"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890501.jpg?a=303412&k=e37dee52afecd5e1774b14e2699112da40d6fb12fd7b1b170bead4922bef3e02&o=",
@@ -234,10 +224,7 @@ export const SITE_CONTENT_EN: SiteContent = {
         "Towels and linen",
         "Free Wi-Fi"
       ],
-      "viewOptions": [
-        "garden view",
-        "courtyard view"
-      ],
+      "viewOptions": ["garden view", "courtyard view"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815891279.jpg?a=303412&k=516403fc2fd0c9fb16e4d98fcd798dc7a4b551408df6398f29e5f14ea875ea59&o=",
@@ -269,10 +256,7 @@ export const SITE_CONTENT_EN: SiteContent = {
         "Flat-screen TV",
         "Free Wi-Fi"
       ],
-      "viewOptions": [
-        "city view",
-        "courtyard view"
-      ],
+      "viewOptions": ["city view", "courtyard view"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890386.jpg?a=303412&k=3fadc36bba4989dbcd614197e1726c692fa75bd9011165c2e45ac0ac9d0f8bc9&o=",
@@ -293,54 +277,14 @@ export const SITE_CONTENT_EN: SiteContent = {
     }
   ],
   "amenities": [
-    {
-      "id": "wifi",
-      "label": "Free Wi-Fi",
-      "icon": "wifi",
-      "highlight": true
-    },
-    {
-      "id": "parking",
-      "label": "Free private parking",
-      "icon": "car-front",
-      "highlight": true
-    },
-    {
-      "id": "terrace",
-      "label": "Terrace",
-      "icon": "sun",
-      "highlight": true
-    },
-    {
-      "id": "garden",
-      "label": "Garden",
-      "icon": "tree",
-      "highlight": false
-    },
-    {
-      "id": "picnic",
-      "label": "Picnic area",
-      "icon": "basket",
-      "highlight": false
-    },
-    {
-      "id": "nonsmoking",
-      "label": "Non-smoking rooms",
-      "icon": "ban",
-      "highlight": false
-    },
-    {
-      "id": "family",
-      "label": "Family rooms",
-      "icon": "people",
-      "highlight": false
-    },
-    {
-      "id": "private-checkin",
-      "label": "Private check-in/out",
-      "icon": "key",
-      "highlight": false
-    }
+    { "id": "wifi", "label": "Free Wi-Fi", "icon": "wifi", "highlight": true },
+    { "id": "parking", "label": "Free private parking", "icon": "car-front", "highlight": true },
+    { "id": "terrace", "label": "Terrace", "icon": "sun", "highlight": true },
+    { "id": "garden", "label": "Garden", "icon": "tree", "highlight": false },
+    { "id": "picnic", "label": "Picnic area", "icon": "basket", "highlight": false },
+    { "id": "nonsmoking", "label": "Non-smoking rooms", "icon": "ban", "highlight": false },
+    { "id": "family", "label": "Family rooms", "icon": "people", "highlight": false },
+    { "id": "private-checkin", "label": "Private check-in/out", "icon": "key", "highlight": false }
   ],
   "reviews": [
     {

@@ -1,4 +1,4 @@
-import { SiteContent } from '../models/site-content';
+﻿import { SiteContent } from '../models/site-content';
 
 export const SITE_CONTENT_UK: SiteContent = {
   "brand": {
@@ -110,11 +110,7 @@ export const SITE_CONTENT_UK: SiteContent = {
       "moreTitle": "Ще",
       "languageLabel": "Мова"
     },
-    "language": {
-      "ua": "UA",
-      "en": "EN",
-      "label": "Мова"
-    }
+    "language": {"ua": "UA", "en": "EN", "label": "Мова"}
   },
   "heroHighlights": [
     "Безкоштовний Wi-Fi",
@@ -164,10 +160,7 @@ export const SITE_CONTENT_UK: SiteContent = {
         "Опалення",
         "Безкоштовний Wi-Fi"
       ],
-      "viewOptions": [
-        "вид на сад",
-        "вид на двір"
-      ],
+      "viewOptions": ["вид на сад", "вид на двір"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815891279.jpg?a=303412&k=516403fc2fd0c9fb16e4d98fcd798dc7a4b551408df6398f29e5f14ea875ea59&o=",
@@ -199,10 +192,7 @@ export const SITE_CONTENT_UK: SiteContent = {
         "Опалення",
         "Безкоштовний Wi-Fi"
       ],
-      "viewOptions": [
-        "вид на місто",
-        "вид на двір"
-      ],
+      "viewOptions": ["вид на місто", "вид на двір"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890501.jpg?a=303412&k=e37dee52afecd5e1774b14e2699112da40d6fb12fd7b1b170bead4922bef3e02&o=",
@@ -234,10 +224,7 @@ export const SITE_CONTENT_UK: SiteContent = {
         "Рушники та білизна",
         "Безкоштовний Wi-Fi"
       ],
-      "viewOptions": [
-        "вид на сад",
-        "вид на двір"
-      ],
+      "viewOptions": ["вид на сад", "вид на двір"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815891279.jpg?a=303412&k=516403fc2fd0c9fb16e4d98fcd798dc7a4b551408df6398f29e5f14ea875ea59&o=",
@@ -269,10 +256,7 @@ export const SITE_CONTENT_UK: SiteContent = {
         "ТБ з плоским екраном",
         "Безкоштовний Wi-Fi"
       ],
-      "viewOptions": [
-        "вид на місто",
-        "вид на двір"
-      ],
+      "viewOptions": ["вид на місто", "вид на двір"],
       "images": [
         {
           "src": "https://q-xx.bstatic.com/xdata/images/hotel/max300/815890386.jpg?a=303412&k=3fadc36bba4989dbcd614197e1726c692fa75bd9011165c2e45ac0ac9d0f8bc9&o=",
@@ -293,54 +277,14 @@ export const SITE_CONTENT_UK: SiteContent = {
     }
   ],
   "amenities": [
-    {
-      "id": "wifi",
-      "label": "Безкоштовний Wi-Fi",
-      "icon": "wifi",
-      "highlight": true
-    },
-    {
-      "id": "parking",
-      "label": "Безкоштовне приватне паркування",
-      "icon": "car-front",
-      "highlight": true
-    },
-    {
-      "id": "terrace",
-      "label": "Тераса",
-      "icon": "sun",
-      "highlight": true
-    },
-    {
-      "id": "garden",
-      "label": "Сад",
-      "icon": "tree",
-      "highlight": false
-    },
-    {
-      "id": "picnic",
-      "label": "Зона для пікніка",
-      "icon": "basket",
-      "highlight": false
-    },
-    {
-      "id": "nonsmoking",
-      "label": "Номери для некурців",
-      "icon": "ban",
-      "highlight": false
-    },
-    {
-      "id": "family",
-      "label": "Сімейні номери",
-      "icon": "people",
-      "highlight": false
-    },
-    {
-      "id": "private-checkin",
-      "label": "Приватний заїзд/виїзд",
-      "icon": "key",
-      "highlight": false
-    }
+    { "id": "wifi", "label": "Безкоштовний Wi-Fi", "icon": "wifi", "highlight": true },
+    { "id": "parking", "label": "Безкоштовне приватне паркування", "icon": "car-front", "highlight": true },
+    { "id": "terrace", "label": "Тераса", "icon": "sun", "highlight": true },
+    { "id": "garden", "label": "Сад", "icon": "tree", "highlight": false },
+    { "id": "picnic", "label": "Зона для пікніка", "icon": "basket", "highlight": false },
+    { "id": "nonsmoking", "label": "Номери для некурців", "icon": "ban", "highlight": false },
+    { "id": "family", "label": "Сімейні номери", "icon": "people", "highlight": false },
+    { "id": "private-checkin", "label": "Приватний заїзд/виїзд", "icon": "key", "highlight": false }
   ],
   "reviews": [
     {
