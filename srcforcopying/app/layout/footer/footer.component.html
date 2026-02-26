@@ -1,0 +1,91 @@
+﻿<footer class="site-footer">
+  <div class="container">
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-4 footer-grid">
+        <div class="col-lg-4">
+          <div class="footer-title">{{ content.ui.footer.aboutTitle }}</div>
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="assets/branding/logo-mark.svg"
+              [attr.alt]="content.brand.name + ' logo'"
+            >
+            <span>{{ content.brand.name }}</span>
+          </div>
+          <p class="footer-text">
+            {{ content.brand.descriptionFooter || content.brand.descriptionShort || content.ui.footer.aboutText }}
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <div class="footer-title">{{ content.ui.footer.navTitle }}</div>
+          <ul class="list-unstyled footer-list">
+            <li *ngFor="let link of navLinks; trackBy: trackByFragment">
+              <a [routerLink]="['/']" [fragment]="link.fragment">
+                {{ content.ui.nav[link.key] }}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <div class="footer-title">{{ content.ui.footer.contactsTitle }}</div>
+          <div class="footer-text">{{ content.contacts.address }}</div>
+          <div class="footer-text" *ngFor="let phone of content.contacts.phones">
+            <a [href]="phone.hrefTel">{{ phone.value }}</a>
+          </div>
+          <div class="footer-meta">
+            <span>{{ content.ui.contacts.checkInLabel }}: {{ content.contacts.checkIn || '14:00' }}</span>
+            <span>{{ content.ui.contacts.checkOutLabel }}: {{ content.contacts.checkOut || '11:00' }}</span>
+          </div>
+          <div class="footer-socials">
+            <a
+              *ngIf="content.socials.bookingUrl"
+              class="footer-icon"
+              [href]="content.socials.bookingUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Booking.com"
+            >
+              <i class="bi bi-globe2" aria-hidden="true"></i>
+            </a>
+            <a
+              *ngIf="content.socials.tripadvisorUrl"
+              class="footer-icon"
+              [href]="content.socials.tripadvisorUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Tripadvisor"
+            >
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            </a>
+            <a
+              *ngIf="content.socials.facebookUrl"
+              class="footer-icon"
+              [href]="content.socials.facebookUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <div class="footer-copy">
+          © {{ currentYear }} {{ content.brand.name }}. {{ content.ui.footer.rights }}
+        </div>
+        <a
+          *ngIf="content?.links?.githubRepoUrl as gh"
+          class="footer-github"
+          [href]="gh"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="bi bi-github" aria-hidden="true"></i>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</footer>
+

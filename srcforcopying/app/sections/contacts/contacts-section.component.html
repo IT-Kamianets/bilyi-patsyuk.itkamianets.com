@@ -1,0 +1,124 @@
+﻿<section id="contacts" class="section-block">
+  <div class="container">
+    <div class="section-heading">
+      <ng-container *ngIf="content$ | async as content">
+        <h2 class="section-title">{{ content.ui.contacts.title }}</h2>
+        <p class="section-lead">{{ content.sectionsIntro?.contacts }}</p>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="contact-card">
+            <h3 class="h5">{{ content.brand.name }}</h3>
+            <p class="text-muted">{{ content.contacts.address }}</p>
+            <div class="contact-grid">
+              <div>
+                <div class="contact-label">{{ content.ui.contacts.phoneLabel }}</div>
+                <ul class="list-unstyled contact-list">
+                  <li *ngFor="let phone of content.contacts.phones; trackBy: trackByValue">
+                    <i class="bi bi-telephone" aria-hidden="true"></i>
+                    <a [href]="phone.hrefTel">{{ phone.value }}</a>
+                    <span class="contact-note">{{ phone.label }}</span>
+                  </li>
+                </ul>
+              </div>
+              <div *ngIf="content.contacts.email">
+                <div class="contact-label">{{ content.ui.contacts.emailLabel }}</div>
+                <a [href]="'mailto:' + content.contacts.email">
+                  {{ content.contacts.email }}
+                </a>
+              </div>
+              <div>
+                <div class="contact-label">{{ content.ui.contacts.checkInLabel }}</div>
+                <div class="contact-value">{{ content.contacts.checkIn || '14:00' }}</div>
+              </div>
+              <div>
+                <div class="contact-label">{{ content.ui.contacts.checkOutLabel }}</div>
+                <div class="contact-value">{{ content.contacts.checkOut || '11:00' }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="contact-card contact-card--accent">
+            <h3 class="h5">{{ content.ui.contacts.quickTitle }}</h3>
+            <p class="text-muted">
+              {{ content.ui.contacts.quickText }}
+            </p>
+            <div class="action-buttons">
+              <ng-container *ngIf="primaryPhone$ | async as primaryPhone">
+                <a
+                  *ngIf="primaryPhone"
+                  class="btn btn-primary"
+                  [href]="primaryPhone.hrefTel"
+                  [attr.aria-label]="content.ui.actions.call"
+                >
+                  {{ content.ui.actions.call }}
+                </a>
+              </ng-container>
+              <ng-container *ngIf="messageLink$ | async as message">
+                <a
+                  *ngIf="message"
+                  class="btn btn-outline-primary"
+                  [href]="message.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="content.ui.actions.message + ' ' + message.label"
+                >
+                  {{ content.ui.actions.message }}
+                </a>
+              </ng-container>
+              <ng-container *ngIf="mapsLink$ | async as mapsLink">
+                <a
+                  class="btn btn-outline-primary"
+                  [href]="mapsLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="content.ui.actions.openMap"
+                >
+                  {{ content.ui.actions.openMap }}
+                </a>
+              </ng-container>
+            </div>
+            <div class="external-links" *ngIf="content.socials">
+              <div class="contact-label">{{ content.ui.contacts.officialLinks }}</div>
+              <div class="external-actions">
+                <a
+                  *ngIf="content.socials.bookingUrl"
+                  class="btn btn-light btn-sm"
+                  [href]="content.socials.bookingUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Booking.com"
+                >
+                  Booking.com
+                </a>
+                <a
+                  *ngIf="content.socials.tripadvisorUrl"
+                  class="btn btn-light btn-sm"
+                  [href]="content.socials.tripadvisorUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Tripadvisor"
+                >
+                  Tripadvisor
+                </a>
+                <a
+                  *ngIf="content.socials.facebookUrl"
+                  class="btn btn-light btn-sm"
+                  [href]="content.socials.facebookUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

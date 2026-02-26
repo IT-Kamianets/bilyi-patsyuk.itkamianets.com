@@ -1,0 +1,19 @@
+﻿{
+  "name": "Bilyi Patsyuk",
+  "short_name": "Bilyi Patsyuk",
+  "icons": [
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2c2a26",
+  "background_color": "#f6f0e7",
+  "display": "standalone"
+}

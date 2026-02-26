@@ -1,0 +1,113 @@
+﻿<section id="gallery" class="section-block">
+  <div class="container">
+    <div class="section-heading">
+      <ng-container *ngIf="content$ | async as content">
+        <h2 class="section-title">{{ content.ui.gallery.title }}</h2>
+        <p class="section-lead">{{ content.ui.gallery.lead }}</p>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-3">
+        <div
+          class="col-12 col-sm-6 col-lg-4"
+          *ngFor="let image of (content.media?.galleryImages | slice:0:visibleCount); let i = index; trackBy: trackBySrc"
+        >
+          <button
+            type="button"
+            class="gallery-item"
+            data-bs-toggle="modal"
+            data-bs-target="#galleryModal"
+            (click)="openImage(content.media?.galleryImages || [], image, i)"
+            [attr.aria-label]="image.alt"
+          >
+            <img
+              class="img-fluid"
+              [src]="image.src"
+              [alt]="image.alt"
+              loading="lazy"
+              (error)="handleImageError($event)"
+            >
+            <span class="gallery-caption" *ngIf="image.category">{{ image.category }}</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="gallery-actions"
+        *ngIf="(content.media?.galleryImages?.length || 0) > initialCount"
+      >
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="showMore(content.media?.galleryImages?.length || 0)"
+        >
+          {{ isAllVisible(content.media?.galleryImages?.length || 0) ? content.ui.actions.collapse : content.ui.actions.viewMore }}
+        </button>
+      </div>
+    </ng-container>
+  </div>
+
+  <div
+    class="modal fade gallery-modal"
+    id="galleryModal"
+    tabindex="-1"
+    aria-labelledby="galleryModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <ng-container *ngIf="content$ | async as content">
+            <h5 class="modal-title" id="galleryModalLabel">
+              {{ selectedImage?.alt || content.ui.gallery.modalTitleFallback }}
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              [attr.aria-label]="content.ui.actions.close"
+            ></button>
+          </ng-container>
+        </div>
+        <div class="modal-body">
+          <ng-container *ngIf="selectedImage">
+            <div class="gallery-modal-body">
+              <img
+                class="img-fluid"
+                [src]="selectedImage.src"
+                [alt]="selectedImage.alt"
+                loading="lazy"
+                (error)="handleImageError($event)"
+              >
+              <div class="gallery-meta">
+                <span class="gallery-chip" *ngIf="selectedImage.category">{{ selectedImage.category }}</span>
+                <p *ngIf="selectedImage.caption">{{ selectedImage.caption }}</p>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="content$ | async as content">
+            <div class="gallery-nav">
+              <button
+                type="button"
+                class="btn btn-light"
+                (click)="prevImage()"
+                [disabled]="!hasPrev()"
+                [attr.aria-label]="content.ui.gallery.prev"
+              >
+                <i class="bi bi-arrow-left" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-light"
+                (click)="nextImage()"
+                [disabled]="!hasNext()"
+                [attr.aria-label]="content.ui.gallery.next"
+              >
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

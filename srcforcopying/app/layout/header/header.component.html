@@ -1,0 +1,89 @@
+﻿<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <ng-container *ngIf="content$ | async as content">
+        <a class="navbar-brand" [routerLink]="['/']" fragment="top">
+          <img
+            class="brand-logo"
+            src="assets/branding/logo-mark.svg"
+            [attr.alt]="content.brand.name + ' logo'"
+          >
+          <span class="brand-text">
+            <span class="brand-title">{{ content.brand.name }}</span>
+            <span class="brand-subtitle">{{ content.brand.city }}</span>
+          </span>
+        </a>
+      </ng-container>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+        <div class="navbar-socials d-flex align-items-center gap-2">
+          <ng-container *ngIf="socialLinks$ | async as socials">
+            <a
+              *ngFor="let item of socials; trackBy: trackByKey"
+              class="social-icon"
+              [href]="item.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="item.label"
+            >
+              <i [class]="'bi ' + item.icon" aria-hidden="true"></i>
+            </a>
+          </ng-container>
+        </div>
+        <ng-container *ngIf="content$ | async as content">
+          <div class="language-toggle" aria-label="Language switcher">
+            <button
+              type="button"
+              class="lang-btn"
+              [class.active]="(lang$ | async) === 'uk'"
+              (click)="setLang('uk')"
+              [attr.aria-pressed]="(lang$ | async) === 'uk'"
+            >
+              {{ content.ui.language.ua }}
+            </button>
+            <span class="lang-divider">|</span>
+            <button
+              type="button"
+              class="lang-btn"
+              [class.active]="(lang$ | async) === 'en'"
+              (click)="setLang('en')"
+              [attr.aria-pressed]="(lang$ | async) === 'en'"
+            >
+              {{ content.ui.language.en }}
+            </button>
+          </div>
+        </ng-container>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-lg-2" id="mainNav">
+        <ng-container *ngIf="content$ | async as content">
+          <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0">
+            <li class="nav-item" *ngFor="let link of navLinks; trackBy: trackByFragment">
+              <a
+                class="nav-link"
+                [class.active]="activeSection === link.fragment"
+                [attr.aria-current]="activeSection === link.fragment ? 'page' : null"
+                [routerLink]="['/']"
+                [fragment]="link.fragment"
+                (click)="setActiveSection(link.fragment)"
+              >
+                {{ content.ui.nav[link.key] }}
+              </a>
+            </li>
+          </ul>
+        </ng-container>
+      </div>
+    </div>
+  </nav>
+</header>

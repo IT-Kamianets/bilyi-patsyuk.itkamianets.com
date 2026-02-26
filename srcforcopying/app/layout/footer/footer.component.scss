@@ -1,0 +1,123 @@
+﻿.site-footer {
+  padding: 3rem 0 2rem;
+  border-top: 1px solid rgba(47, 50, 55, 0.1);
+  background: rgba(246, 240, 231, 0.92);
+}
+
+.footer-title {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--color-slate);
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: var(--color-slate);
+  margin-bottom: 0.5rem;
+}
+
+.footer-list li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-list a {
+  color: var(--color-graphite);
+  font-weight: 500;
+}
+
+.footer-list a:hover {
+  color: var(--color-accent);
+}
+
+.footer-meta {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  margin-top: 0.75rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 50, 55, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-graphite);
+  background: #fff;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-icon:hover {
+  color: var(--color-accent);
+  border-color: rgba(122, 47, 59, 0.5);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(47, 50, 55, 0.08);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: var(--color-slate);
+}
+
+.footer-github {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 50, 55, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-graphite);
+  background: #fff;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-github:hover {
+  color: var(--color-accent);
+  border-color: rgba(122, 47, 59, 0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 991.98px) {
+  .site-footer {
+    padding-bottom: calc(2rem + var(--bottom-nav-height));
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}

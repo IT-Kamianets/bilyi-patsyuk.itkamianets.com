@@ -1,0 +1,94 @@
+﻿<nav class="bottom-nav d-lg-none" aria-label="Mobile bottom navigation">
+  <div class="container bottom-nav__inner">
+    <ng-container *ngIf="content$ | async as content">
+      <a
+        *ngFor="let link of navLinks; trackBy: trackByFragment"
+        class="bottom-nav__item"
+        [class.active]="activeSection === link.fragment"
+        [attr.aria-current]="activeSection === link.fragment ? 'page' : null"
+        [attr.aria-label]="content.ui.nav[link.key]"
+        [routerLink]="['/']"
+        [fragment]="link.fragment"
+        (click)="setActiveSection(link.fragment)"
+      >
+        <i [class]="'bi ' + link.icon" aria-hidden="true"></i>
+        <span>{{ content.ui.nav[link.key] }}</span>
+      </a>
+      <button
+        type="button"
+        class="bottom-nav__item"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#bottomNavOffcanvas"
+        aria-controls="bottomNavOffcanvas"
+        [attr.aria-label]="content.ui.nav.more"
+      >
+        <i class="bi bi-three-dots" aria-hidden="true"></i>
+        <span>{{ content.ui.nav.more }}</span>
+      </button>
+    </ng-container>
+  </div>
+</nav>
+
+<div
+  class="offcanvas offcanvas-bottom bottom-nav__offcanvas"
+  tabindex="-1"
+  id="bottomNavOffcanvas"
+  aria-labelledby="bottomNavOffcanvasLabel"
+>
+  <div class="offcanvas-header">
+    <ng-container *ngIf="content$ | async as content">
+      <h5 class="offcanvas-title" id="bottomNavOffcanvasLabel">{{ content.brand.name }}</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        [attr.aria-label]="content.ui.actions.close"
+      ></button>
+    </ng-container>
+  </div>
+  <div class="offcanvas-body">
+    <ng-container *ngIf="content$ | async as content">
+      <div class="offcanvas-section offcanvas-section--compact">
+        <div class="offcanvas-label">{{ content.ui.mobile?.languageLabel || content.ui.language.label }}</div>
+        <div class="language-toggle language-toggle--compact">
+          <button
+            type="button"
+            class="lang-btn"
+            [class.active]="(lang$ | async) === 'uk'"
+            (click)="setLang('uk')"
+            [attr.aria-pressed]="(lang$ | async) === 'uk'"
+          >
+            {{ content.ui.language.ua }}
+          </button>
+          <button
+            type="button"
+            class="lang-btn"
+            [class.active]="(lang$ | async) === 'en'"
+            (click)="setLang('en')"
+            [attr.aria-pressed]="(lang$ | async) === 'en'"
+          >
+            {{ content.ui.language.en }}
+          </button>
+        </div>
+      </div>
+
+      <div class="offcanvas-section">
+        <div class="offcanvas-label">{{ content.ui.mobile?.moreTitle || content.ui.nav.more }}</div>
+        <div class="social-icons">
+          <ng-container *ngIf="socialLinks$ | async as socials">
+            <a
+              *ngFor="let item of socials; trackBy: trackByKey"
+              class="social-icon"
+              [href]="item.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="item.label"
+            >
+              <i [class]="'bi ' + item.icon" aria-hidden="true"></i>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

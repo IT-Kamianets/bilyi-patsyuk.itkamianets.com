@@ -1,0 +1,189 @@
+﻿<section id="rooms" class="section-block">
+  <div class="container">
+    <div class="section-heading">
+      <ng-container *ngIf="content$ | async as content">
+        <h2 class="section-title">{{ content.ui.rooms.title }}</h2>
+        <p class="section-lead">{{ content.sectionsIntro?.rooms }}</p>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="content$ | async as content">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" *ngFor="let room of content.rooms | slice:0:3; trackBy: trackById">
+          <article class="card room-card h-100">
+            <div class="card-body d-flex flex-column">
+              <div class="room-meta">
+                <span class="room-size">{{ room.sizeM2 }} м²</span>
+                <span class="room-view">{{ room.viewOptions[0] }}</span>
+              </div>
+              <h3 class="h5">{{ room.name }}</h3>
+              <p class="text-muted flex-grow-1">{{ room.shortDescription }}</p>
+              <div class="room-features">
+                <span class="feature-pill" *ngFor="let feature of room.features | slice:0:4">
+                  {{ feature }}
+                </span>
+              </div>
+              <div class="room-actions mt-3">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  type="button"
+                  data-bs-toggle="modal"
+                  [attr.data-bs-target]="'#roomModal-' + room.id"
+                >
+                  {{ content.ui.rooms.details }}
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="rooms-cta">
+        <a class="btn btn-primary" [routerLink]="['/']" fragment="contacts">
+          {{ content.ui.rooms.cta }}
+        </a>
+      </div>
+
+      <div
+        class="modal fade room-modal"
+        *ngFor="let room of content.rooms; trackBy: trackById"
+        [id]="'roomModal-' + room.id"
+        tabindex="-1"
+        [attr.aria-labelledby]="'roomModalLabel-' + room.id"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" [id]="'roomModalLabel-' + room.id">{{ room.name }}</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                [attr.aria-label]="content.ui.actions.close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="room-modal-body">
+                <div class="room-modal-media">
+                  <div class="room-modal-gallery">
+                    <ng-container *ngIf="room.images?.length; else roomPlaceholderTpl">
+                      <div class="carousel slide" [id]="'roomCarousel-' + room.id" data-bs-ride="false">
+                        <div class="carousel-inner">
+                          <div
+                            class="carousel-item"
+                            *ngFor="let image of room.images || []; let i = index; trackBy: trackByImage"
+                            [class.active]="i === 0"
+                          >
+                            <img
+                              class="d-block w-100 room-modal-image"
+                              [src]="image.src"
+                              [alt]="image.alt"
+                              loading="lazy"
+                              (error)="handleRoomImageError($event)"
+                            >
+                            <div class="carousel-caption" *ngIf="image.caption">
+                              {{ image.caption }}
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          [attr.data-bs-target]="'#roomCarousel-' + room.id"
+                          data-bs-slide="prev"
+                          *ngIf="(room.images?.length || 0) > 1"
+                        >
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">{{ content.ui.rooms.prev }}</span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          [attr.data-bs-target]="'#roomCarousel-' + room.id"
+                          data-bs-slide="next"
+                          *ngIf="(room.images?.length || 0) > 1"
+                        >
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">{{ content.ui.rooms.next }}</span>
+                        </button>
+                      </div>
+                    </ng-container>
+                    <ng-template #roomPlaceholderTpl>
+                      <div class="room-placeholder">
+                        <img
+                          class="d-block w-100 room-modal-image"
+                          [src]="roomPlaceholder"
+                          [attr.alt]="room.name"
+                          loading="lazy"
+                        >
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+                <div class="room-modal-info">
+                  <p class="text-muted">{{ room.shortDescription }}</p>
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <div class="modal-meta">
+                        <span>{{ content.ui.rooms.sizeLabel }}</span>
+                        <strong>{{ room.sizeM2 }} м²</strong>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="modal-meta">
+                        <span>{{ content.ui.rooms.viewLabel }}</span>
+                        <strong>{{ room.viewOptions.join(', ') }}</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-features">
+                    <h6>{{ content.ui.rooms.amenitiesLabel }}</h6>
+                    <ul class="list-unstyled">
+                      <li *ngFor="let feature of room.features">
+                        <i class="bi bi-check2" aria-hidden="true"></i>
+                        {{ feature }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer flex-column flex-sm-row justify-content-between gap-2">
+              <div class="modal-cta">
+                <a
+                  *ngIf="content.socials.bookingUrl"
+                  class="btn btn-primary"
+                  [href]="content.socials.bookingUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ content.ui.actions.book }}
+                </a>
+                <ng-container *ngIf="messageLink$ | async as message">
+                  <a
+                    *ngIf="message"
+                    class="btn btn-outline-primary"
+                    [href]="message.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    [attr.aria-label]="content.ui.actions.message + ' ' + message.label"
+                  >
+                    {{ content.ui.actions.message }}
+                  </a>
+                </ng-container>
+              </div>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                data-bs-dismiss="modal"
+              >
+                {{ content.ui.actions.close }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+
