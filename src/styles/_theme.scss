@@ -12,6 +12,7 @@
   --shadow-strong: 0 20px 45px rgba(33, 26, 20, 0.16);
   --header-offset: 96px;
   --bottom-nav-height: 72px;
+  --mobile-topbar-h: 0px;
   --bs-body-bg: var(--color-sand);
   --bs-body-color: var(--color-ink);
   --bs-primary: var(--color-accent);
@@ -109,10 +110,12 @@ section[id] {
 
 @media (max-width: 991.98px) {
   :root {
-    --header-offset: 84px;
+    --mobile-topbar-h: calc(52px + env(safe-area-inset-top));
+    --header-offset: var(--mobile-topbar-h);
   }
 
   main {
+    padding-top: var(--mobile-topbar-h);
     padding-bottom: var(--bottom-nav-height);
   }
 

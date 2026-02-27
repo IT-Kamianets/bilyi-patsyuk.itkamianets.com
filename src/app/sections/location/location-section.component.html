@@ -29,10 +29,6 @@
             <p class="text-muted">{{ content.location.nearby }}</p>
             <p class="text-muted">{{ content.location.notes }}</p>
             <ul class="list-unstyled location-list">
-              <li *ngIf="content.location.coords">
-                <i class="bi bi-geo-alt" aria-hidden="true"></i>
-                {{ content.ui.location.coordsLabel }}: {{ content.location.coords.lat }}, {{ content.location.coords.lon }}
-              </li>
               <li>
                 <i class="bi bi-signpost" aria-hidden="true"></i>
                 {{ content.ui.location.walkingText }}
@@ -42,6 +38,17 @@
                 {{ content.ui.location.quietText }}
               </li>
             </ul>
+            <div class="location-actions" *ngIf="mapLink$ | async as mapLink">
+              <a
+                class="btn btn-primary location-map-btn"
+                [href]="mapLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="content.ui.actions.openMap"
+              >
+                {{ content.ui.actions.openMap }}
+              </a>
+            </div>
           </div>
         </div>
       </div>

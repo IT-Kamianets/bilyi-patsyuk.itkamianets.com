@@ -6,7 +6,7 @@ import { ContentService } from '../../services/content.service';
 import { LanguageCode, LanguageService } from '../../services/language.service';
 
 interface NavLink {
-  key: 'home' | 'rooms' | 'gallery' | 'location' | 'contacts';
+  key: 'rooms' | 'gallery' | 'location' | 'contacts';
   fragment: string;
   icon: string;
 }
@@ -31,7 +31,6 @@ export class BottomNavComponent implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
 
   protected readonly navLinks: NavLink[] = [
-    { key: 'home', fragment: 'top', icon: 'bi-house' },
     { key: 'rooms', fragment: 'rooms', icon: 'bi-door-open' },
     { key: 'gallery', fragment: 'gallery', icon: 'bi-images' },
     { key: 'location', fragment: 'location', icon: 'bi-geo-alt' },
@@ -111,11 +110,11 @@ export class BottomNavComponent implements AfterViewInit, OnDestroy {
     }
 
     const initial = window.location.hash.replace('#', '');
-    if (initial) {
+    if (initial && this.navLinks.some((link) => link.fragment === initial)) {
       this.activeSection = initial;
       this.cdr.markForCheck();
     } else {
-      this.activeSection = 'top';
+      this.activeSection = this.navLinks[0]?.fragment ?? null;
     }
   }
 

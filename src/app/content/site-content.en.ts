@@ -44,7 +44,7 @@ export const SITE_CONTENT_EN: SiteContent = {
       "collapse": "Collapse",
       "close": "Close",
       "call": "Call",
-      "openMap": "Open map"
+      "openMap": "Open in map"
     },
     "hero": {
       "cardTitle": "In the historic heart of town",

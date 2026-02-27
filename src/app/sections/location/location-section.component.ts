@@ -20,4 +20,20 @@ export class LocationSectionComponent {
     map((content) => content.location.mapEmbedUrl || ''),
     map((url) => (url ? this.sanitizer.bypassSecurityTrustResourceUrl(url) : null))
   );
+
+  protected readonly mapLink$ = this.contentService.content$.pipe(
+    map((content) => {
+      const directLink = content.location.mapLink?.trim();
+      if (directLink) {
+        return directLink;
+      }
+
+      const address = content.contacts.address?.trim();
+      if (!address) {
+        return null;
+      }
+
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+    })
+  );
 }
